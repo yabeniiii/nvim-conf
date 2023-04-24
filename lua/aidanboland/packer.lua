@@ -100,5 +100,5 @@ return require('packer').startup(function(use)
         requires = { 'nvim-tree/nvim-web-devicons', opt = true }
     }
     use("kristijanhusak/vim-carbon-now-sh")
-    use("tpope/vim-fugitive")
+    use('ThePrimeagen/vim-be-good')
 end)
