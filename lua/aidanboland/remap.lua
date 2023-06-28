@@ -36,5 +36,5 @@ end)
 
 vim.keymap.set("i", "jj", "<Esc>")
 vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessioniser <CR>")
-vim.keymap.set("n", "<leader>pt", "<cmd>NeoTreeRevealToggle<CR>")
-vim.keymap.set("n", "<leader>pq", "<cmd>NeoTreeFocus<CR>")
+vim.keymap.set("n", "<leader>pt", "<cmd>NvimTreeToggle<CR>")
+vim.keymap.set("n", "<leader>pq", "<cmd>NvimTreeFocus<CR>")

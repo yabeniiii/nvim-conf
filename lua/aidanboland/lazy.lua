@@ -16,7 +16,6 @@ local plugins = {
     "nvim-treesitter/nvim-treesitter",
     "theprimeagen/harpoon",
     "tpope/vim-fugitive",
-    "windwp/nvim-autopairs",
     "andweeb/presence.nvim",
     "lukas-reineke/indent-blankline.nvim",
     "kristijanhusak/vim-carbon-now-sh",
@@ -24,13 +23,29 @@ local plugins = {
     "godlygeek/tabular",
     "preservim/vim-markdown",
     "iamcco/markdown-preview.nvim",
+    "numToStr/Comment.nvim",
     {
-        "numToStr/Comment.nvim",
-
+        'windwp/nvim-autopairs',
+        event = "InsertEnter",
+        opts = {} -- this is equalent to setup({}) function
     },
     {
         "nvim-telescope/telescope.nvim",
-        dependencies = { { "nvim-lua/plenary.nvim" } }
+        dependencies = { { "nvim-lua/plenary.nvim" } },
+        config = function()
+            local actions = require("telescope.actions")
+
+            require("telescope").setup {
+                defaults = {
+                    mappings = {
+                        i = {
+                            ["<C-j>"] = actions.move_selection_next,
+                            ["<C-k>"] = actions.move_selection_previous,
+                        }
+                    }
+                }
+            }
+        end
     },
     {
         "nvim-lualine/lualine.nvim",
@@ -42,14 +57,14 @@ local plugins = {
             vim.cmd.colorscheme = "catppuccin"
         end
     },
-    {
-        "nvim-neo-tree/neo-tree.nvim",
-        dependencies = {
-            "nvim-lua/plenary.nvim",
-            "nvim-tree/nvim-web-devicons",
-            "MunifTanjim/nui.nvim",
-        }
-    },
+    -- {
+    -- "nvim-neo-tree/neo-tree.nvim",
+    --  dependencies = {
+    -- "nvim-lua/plenary.nvim",
+    -- "nvim-tree/nvim-web-devicons",
+    --   "MunifTanjim/nui.nvim",
+    --    }
+    -- },
     {
         "VonHeikemen/lsp-zero.nvim",
         dependencies = {
@@ -73,9 +88,54 @@ local plugins = {
             -- OPTIONAL:
             --   `nvim-notify` is only needed, if you want to use the notification view.
             --   If not available, we use `mini` as the fallback
-            "rcarriga/nvim-notify",
+            {
+                "rcarriga/nvim-notify",
+                config = function()
+                    require("notify").setup({
+                        background_colour = "#000000",
+                    })
+                end
+            },
+        },
+        config = function()
+            require("noice").setup({
+                presets = {
+                    -- you can enable a preset by setting it to true, or a table that will override the preset config
+                    -- you can also add custom presets that you can enable/disable with enabled=true
+                    bottom_search = true,          -- use a classic bottom cmdline for search
+                    command_palette = true,        -- position the cmdline and popupmenu together
+                    long_message_to_split = false, -- long messages will be sent to a split
+                    inc_rename = false,            -- enables an input dialog for inc-rename.nvim
+                }
+            })
+        end
+    },
+    {
+        "kylechui/nvim-surround",
+        version = "*", -- Use for stability; omit to use `main` branch for the latest features
+        event = "VeryLazy",
+        config = function()
+            require("nvim-surround").setup({
+                -- Configuration here, or leave empty to use defaults
+            })
+        end
+    },
+    {
+        "m4xshen/smartcolumn.nvim",
+        opts = {
+            scope = "line"
         }
-    }
+    },
+    {
+        "nvim-tree/nvim-tree.lua",
+        version = "*",
+        dependencies = {
+            "nvim-tree/nvim-web-devicons",
+        },
+        config = function()
+            require("nvim-tree").setup {}
+        end,
+    },
 
 }
 
