@@ -13,6 +13,23 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
+
+    -- Colourschemes
+    {
+        "catppuccin/nvim",
+        --config = function()
+        --    vim.cmd [[colorscheme catppuccin]]
+        --end
+    },
+    "kunzaatko/nord.nvim",
+    --"andersevenrud/nordic.nvim",
+    {
+        'AlexvZyl/nordic.nvim',
+        lazy = false,
+        priority = 1000,
+    },
+
+    -- plugins
     "nvim-treesitter/nvim-treesitter",
     "theprimeagen/harpoon",
     "tpope/vim-fugitive",
@@ -24,6 +41,10 @@ local plugins = {
     "preservim/vim-markdown",
     "iamcco/markdown-preview.nvim",
     "numToStr/Comment.nvim",
+    "christoomey/vim-tmux-navigator",
+    "RyanMillerC/better-vim-tmux-resizer",
+    "windwp/nvim-ts-autotag",
+    "nguyenvukhang/nvim-toggler",
     {
         'windwp/nvim-autopairs',
         event = "InsertEnter",
@@ -50,12 +71,6 @@ local plugins = {
     {
         "nvim-lualine/lualine.nvim",
         dependencies = { "nvim-tree/nvim-web-devicons" }
-    },
-    {
-        "catppuccin/nvim",
-        build = function()
-            vim.cmd.colorscheme = "catppuccin"
-        end
     },
     -- {
     -- "nvim-neo-tree/neo-tree.nvim",
@@ -136,7 +151,26 @@ local plugins = {
             require("nvim-tree").setup {}
         end,
     },
-
+    -- {
+    --     'mawkler/modicator.nvim',
+    --     dependencies = 'catppuccin/nvim', -- Add your colorscheme plugin here
+    --     init = function()
+    --         -- These are required for Modicator to work
+    --         vim.o.cursorline = true
+    --         vim.o.number = true
+    --         vim.o.termguicolors = true
+    --     end,
+    --     config = function()
+    --         require('modicator').setup()
+    --     end,
+    -- },
+    --{
+    --    "RRethy/vim-illuminate",
+    --    config = function()
+    --        vim.api.nvim_set_hl(0, 'IlluminatedWordRead', { bg = "#313244" })
+    --        vim.api.nvim_set_hl(0, 'IlluminatedWordWrite', { bg = "#313244" })
+    --    end
+    --},
 }
 
 local opts = {}

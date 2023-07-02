@@ -8,9 +8,3 @@ vim.api.nvim_create_autocmd("BufWritePre", {
         vim.lsp.buf.format { async = false }
     end
 })
-vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
-    pattern = "*",
-    callback = function()
-        vim.api.nvim_set_hl(0, "ColorColumn", { fg = "#313244", bg = "#313244" })
-    end
-})

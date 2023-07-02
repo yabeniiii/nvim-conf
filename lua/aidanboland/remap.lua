@@ -38,3 +38,8 @@ vim.keymap.set("i", "jj", "<Esc>")
 vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessioniser <CR>")
 vim.keymap.set("n", "<leader>pt", "<cmd>NvimTreeToggle<CR>")
 vim.keymap.set("n", "<leader>pq", "<cmd>NvimTreeFocus<CR>")
+
+vim.keymap.set("n", "<T-Left>", "<cmd>TmuxResizeLeft<CR>")
+vim.keymap.set("n", "<T-Up>", "<cmd>TmuxResizeUp<CR>")
+vim.keymap.set("n", "<T-Down>", "<cmd>TmuxResizeDown<CR>")
+vim.keymap.set("n", "<T-Right>", "<cmd>TmuxResizeRight<CR>")
