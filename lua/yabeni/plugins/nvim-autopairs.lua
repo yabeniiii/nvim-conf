@@ -1,8 +1,8 @@
 return {
-        {
-        "numToStr/Comment.nvim",
-        config = function()
-            require('Comment').setup()
+    {
+        "windwp/nvim-autopairs",
+        config = function() 
+            require("nvim-autopairs").setup{} 
         end
     },
 }

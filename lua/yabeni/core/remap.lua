@@ -1,5 +1,3 @@
-
-vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
@@ -23,8 +21,6 @@ vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 vim.keymap.set("n", "Q", "<nop>")
 vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
 
-vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
-vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
 vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
 vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 
@@ -44,3 +40,17 @@ vim.keymap.set("n", "<T-Left>", "<cmd>TmuxResizeLeft<CR>")
 vim.keymap.set("n", "<T-Up>", "<cmd>TmuxResizeUp<CR>")
 vim.keymap.set("n", "<T-Down>", "<cmd>TmuxResizeDown<CR>")
 vim.keymap.set("n", "<T-Right>", "<cmd>TmuxResizeRight<CR>")
+
+local builtin = require('telescope.builtin')
+vim.keymap.set('n', '<leader>pf', builtin.find_files, {})
+vim.keymap.set('n', '<C-p>', builtin.git_files, {})
+vim.keymap.set('n', '<leader>ps', function()
+    builtin.grep_string({ search = vim.fn.input("Grep > ") })
+end)
+vim.keymap.set('n', '<C-w>z', '<cmd>tab split<CR>')
+
+vim.keymap.set('n', '<leader>db', '<cmd>DapToggleBreakpoint<CR>')
+vim.keymap.set('n', '<leader>dr', '<cmd>DapContinue<CR>')
+vim.keymap.set('n', '<leader>dn', '<cmd>DapStepOver<CR>')
+vim.keymap.set('n', '<leader>di', '<cmd>DapStepInto<CR>')
+vim.keymap.set('n', '<leader>ds', '<cmd>DapTerminate<CR>')

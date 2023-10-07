@@ -1,2 +1,3 @@
-require("yabeni.core")
+vim.g.mapleader = " "
 require("yabeni.lazy")
+require("yabeni.core")
