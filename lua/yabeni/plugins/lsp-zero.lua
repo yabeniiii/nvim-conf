@@ -70,3 +70,4 @@ vim.diagnostic.config({
 end
     },
 }
+

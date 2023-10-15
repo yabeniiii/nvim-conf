@@ -54,3 +54,5 @@ vim.keymap.set('n', '<leader>dr', '<cmd>DapContinue<CR>')
 vim.keymap.set('n', '<leader>dn', '<cmd>DapStepOver<CR>')
 vim.keymap.set('n', '<leader>di', '<cmd>DapStepInto<CR>')
 vim.keymap.set('n', '<leader>ds', '<cmd>DapTerminate<CR>')
+vim.keymap.set('n', '<leader>dl', "<cmd>DapLoadLaunchJSON<CR>")
+
