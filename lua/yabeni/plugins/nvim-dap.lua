@@ -1,7 +1,7 @@
 return {
-    {
-        "mfussenegger/nvim-dap",
-        config = function()
-        end,
-    },
+  {
+    "mfussenegger/nvim-dap",
+    config = function()
+    end,
+  },
 }

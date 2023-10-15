@@ -1,8 +1,8 @@
 return {
-        {
-        "m4xshen/smartcolumn.nvim",
-        opts = {
-            scope = "line"
-        }
-    },
+  {
+    "m4xshen/smartcolumn.nvim",
+    opts = {
+      scope = "line"
+    }
+  },
 }

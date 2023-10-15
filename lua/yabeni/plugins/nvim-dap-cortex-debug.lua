@@ -4,15 +4,14 @@ return {
   dependencies = {
     'mfussenegger/nvim-dap',
   },
-  config = function() 
+  config = function()
     require('dap-cortex-debug').setup {
       debug = false,
       extension_path = '/Users/aidanboland/.vscode-oss/extensions/marus25.cortex-debug-1.12.1-universal/',
       lib_extension = nil,
       node_path = '/Users/aidanboland/.nvm/versions/node/v19.1.0/bin/node',
       dapui_rtt = false,
-      dap_vscode_filetypes = {'c', 'cpp'},
+      dap_vscode_filetypes = { 'c', 'cpp' },
     }
   end,
 }
-
