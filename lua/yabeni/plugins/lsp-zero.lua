@@ -16,9 +16,9 @@ return {
 
       lsp.ensure_installed({
         'clangd',
-        'clang-format',
+        -- 'clang-format',
         'rust_analyzer',
-        'codelldb',
+        -- 'codelldb',
       })
 
       local cmp = require('cmp')

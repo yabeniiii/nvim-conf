@@ -9,7 +9,7 @@ return {
       debug = false,
       extension_path = '/Users/aidanboland/.vscode-oss/extensions/marus25.cortex-debug-1.12.1-universal/',
       lib_extension = nil,
-      node_path = '/Users/aidanboland/.nvm/versions/node/v19.1.0/bin/node',
+      node_path = '/opt/homebrew/bin/node',
       dapui_rtt = false,
       dap_vscode_filetypes = { 'c', 'cpp' },
     }
