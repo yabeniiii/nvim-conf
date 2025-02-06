@@ -7,6 +7,49 @@ return {
 
       require("telescope").setup {
         defaults = {
+          borderchars = {
+            '─', '│', '─', '│', '┌', '┐', '┘', '└'
+          }
+        },
+        pickers = {
+          find_files = {
+            theme = "dropdown",
+            borderchars = {
+              { '─', '│', '─', '│', '┌', '┐', '┘', '└' },
+              prompt = { "─", "│", " ", "│", '┌', '┐', "│", "│" },
+              results = { "─", "│", "─", "│", "├", "┤", "┘", "└" },
+              preview = { '─', '│', '─', '│', '┌', '┐', '┘', '└' },
+            },
+            width = 0.8,
+            previewer = false,
+            prompt_title = false
+          },
+          git_files = {
+            theme = "dropdown",
+            borderchars = {
+              { '─', '│', '─', '│', '┌', '┐', '┘', '└' },
+              prompt = { "─", "│", " ", "│", '┌', '┐', "│", "│" },
+              results = { "─", "│", "─", "│", "├", "┤", "┘", "└" },
+              preview = { '─', '│', '─', '│', '┌', '┐', '┘', '└' },
+            },
+            width = 0.8,
+            previewer = false,
+            prompt_title = false
+          },
+          grep_string = {
+            theme = "dropdown",
+            borderchars = {
+              { '─', '│', '─', '│', '┌', '┐', '┘', '└' },
+              prompt = { "─", "│", " ", "│", '┌', '┐', "│", "│" },
+              results = { "─", "│", "─", "│", "├", "┤", "┘", "└" },
+              preview = { '─', '│', '─', '│', '┌', '┐', '┘', '└' },
+            },
+            width = 0.8,
+            previewer = false,
+            prompt_title = false
+          }
+        },
+        defaults = {
           mappings = {
             i = {
               ["<C-j>"] = actions.move_selection_next,

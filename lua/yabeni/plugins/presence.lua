@@ -5,6 +5,7 @@ return {
       require("presence").setup({
         neovim_image_text = "I don't know what I'm doing!",
         main_image = "file",
+        enable_line_number = true,
       })
     end,
   },

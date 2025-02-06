@@ -1,5 +1,3 @@
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
-
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
@@ -31,10 +29,7 @@ vim.keymap.set("n", "<leader><leader>", function()
   vim.cmd("so")
 end)
 
-vim.keymap.set("i", "jj", "<Esc>")
 vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessioniser <CR>")
-vim.keymap.set("n", "<leader>pt", "<cmd>NvimTreeToggle<CR>")
-vim.keymap.set("n", "<leader>pq", "<cmd>NvimTreeFocus<CR>")
 
 vim.keymap.set("n", "<T-Left>", "<cmd>TmuxResizeLeft<CR>")
 vim.keymap.set("n", "<T-Up>", "<cmd>TmuxResizeUp<CR>")

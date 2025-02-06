@@ -10,12 +10,12 @@ return {
 
       gl.short_line_list = { "NvimTree" }
 
-      colors.bg = "#434C5E"
+      colors.bg = "#4C566A"
 
       local mode_color = {
-        n = colors.blue,
-        i = colors.violet,
-        v = colors.cyan,
+        n = colors.cyan,
+        i = colors.blue,
+        v = colors.green,
         [""] = colors.cyan,
         V = colors.cyan,
         c = colors.magenta,
@@ -34,11 +34,18 @@ return {
         ["!"] = colors.red,
         t = colors.red,
       }
+      gls.left[0] = {
+        gap = {
+          provider = function()
+            return " "
+          end,
+        }
+      }
 
       gls.left[1] = {
         first_bubble_sep_left = {
           provider = function()
-            return "  █"
+            return " █"
           end,
           highlight = { colors.bg },
           separator = "",
@@ -70,10 +77,11 @@ return {
       }
       gls.left[4] = {
         second_bubble_sep_left = {
+          condition = condition.check_git_workspace,
           provider = function()
             return ""
           end,
-          separator = " █",
+          separator = "█",
           separator_highlight = { colors.bg }
         }
       }
@@ -118,26 +126,33 @@ return {
             return string.format("±%d", (vcs.diff_modified() or 0))
           end,
           highlight = { colors.yellow, colors.bg },
-          separator = "█ ",
+          separator = "█",
           separator_highlight = { colors.bg }
         }
       }
 
       -- right side
       gls.right[1] = {
-        diagnostics_error = {
+        DiagnosticError = {
+          -- condition = function()
+          --   if (gl.provider.diagnostic.get_diagnostic_error() ~= 0) and (gl.providers.diagnostic.get_diagnostic_error() ~= 0) then
+          --     return true
+          --   else
+          --     return false
+          --   end
+          -- end,
           provider = "DiagnosticError",
           highlight = { colors.red, colors.bg },
           icon = "",
-          separator = " █",
+          separator = "█",
           separator_highlight = { colors.bg }
         }
       }
       gls.right[2] = {
-        diagnostics_warning = {
-          provider = "DiagnosticWarning",
+        DiagnosticWarn = {
+          provider = "DiagnosticWarn",
           highlight = { colors.yellow, colors.bg },
-          icon = "",
+          icon = " ",
           separator = "█",
           separator_highlight = { colors.bg }
         }
@@ -145,7 +160,7 @@ return {
       gls.right[3] = {
         third_bubble_right_sep_right = {
           provider = function()
-            return "█ "
+            return "█"
           end,
           highlight = { colors.bg },
           separator = "",
@@ -171,7 +186,7 @@ return {
       gls.right[7] = {
         second_bubble_right_sep_right = {
           provider = function()
-            return "█ "
+            return "█"
           end,
           highlight = { colors.bg },
           separator = "",
@@ -197,6 +212,13 @@ return {
         }
       }
 
+      gls.short_line_left[0] = {
+        gap_small = {
+          provider = function()
+            return " "
+          end,
+        }
+      }
       gls.short_line_left[1] = {
         first_bubble_sep_left = {
           provider = function()
